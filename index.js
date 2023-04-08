@@ -9,6 +9,7 @@ const actionCreator = ()=>{
 
 
 const initialState = {
+    
     numOfCakes:10
 }
 

@@ -1,6 +1,16 @@
 const redux = require('redux');
 const createStore = redux.createStore
 const BUY_CAKE = "BUY_CAKE"
+const CAKE_RESTOCKED = "CAKE_RESTOCKED";
+
+
+const restockCake = (qty = 1)=>{
+    return {
+        type:CAKE_RESTOCKED,
+        quantity:qty,
+
+    }
+}
 
 const actionCreator = ()=>{
     return {
@@ -25,6 +35,12 @@ const reducer = (state=initialState, action)=>{
                 anotherState: state. anotherState+1
 
             }
+
+            case CAKE_RESTOCKED:
+                return{
+                    ...state,
+                    numOfCakes:state.numOfCakes + action.quantity
+                }
             default: 
             return state
     }
@@ -41,4 +57,8 @@ const unsub = store.subscribe(()=>console.log("update state", store.getState()))
 
 
 store.dispatch(actionCreator())
+
+store.dispatch(actionCreator())
+store.dispatch(actionCreator())
+store.dispatch(restockCake(4))
 unsub()

@@ -42,7 +42,7 @@ const reducer = (state=initialState, action)=>{
                     numOfCakes:state.numOfCakes + action.quantity
                 }
             default: 
-            return state
+            return state;
     }
 }
 

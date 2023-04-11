@@ -7,7 +7,7 @@ const CAKE_RESTOCKED = "CAKE_RESTOCKED";
 const restockCake = (qty = 1)=>{
     return {
         type:CAKE_RESTOCKED,
-        quantity:qty,
+        quantity:qty,   
 
     }
 }
